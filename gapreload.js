@@ -45,7 +45,7 @@ getXML('gapreload', function (config) {
   // First loading only, skip it directly if accessed from desktop.
   if (!/^http/.test(location)) {
     var serverOrigin = getOrigin(config.SERVER_HOST, config.SERVER_PORT);
-    serverOrigin = prompt('Do you want to use GapReload?', serverOrigin);
+    //serverOrigin = prompt('Do you want to use GapReload?', serverOrigin);
     // Wait until the server is running and confirm to use GapReload.
     if (!serverOrigin) { return; }
     var contentPath = /\/www\/.+$/.exec(location)[0];
