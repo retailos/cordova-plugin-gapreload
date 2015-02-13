@@ -41,7 +41,7 @@ function addScript(url) {
 }
 
 getXML('gapreload', function (config) {
-  config = mergeParams(config, { SERVER_HOST: 127.0.0.1, SERVER_PORT: 8000, LIVERELOAD_PORT: 35729 });
+  config = mergeParams(config, { SERVER_HOST: '127.0.0.1', SERVER_PORT: 8000, LIVERELOAD_PORT: 35729 });
   // First loading only, skip it directly if accessed from desktop.
   if (!/^http/.test(location)) {
     var serverOrigin = getOrigin(config.SERVER_HOST, config.SERVER_PORT);
