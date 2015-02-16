@@ -50,8 +50,13 @@ getXML('gapreload', function (config) {
     if (!serverOrigin) { return; }
     var contentPath = /\/www\/.+$/.exec(location)[0];
     // Use `replace` so that it doesn't break the Android back button.
-    alert(cordova.platformId);
-    location.replace(serverOrigin + cordova.platformId + contentPath);
+    if (cordova.platformId === 'ios') {
+    
+      location.replace(serverOrigin + cordova.platformId + contentPath);
+    } else {
+      
+      location.replace(serverOrigin + cordova.platformId + '/assets' + contentPath);
+    }
   }
   var liveReloadHost = config.LIVERELOAD_HOST || config.SERVER_HOST;
   var liveReloadOrigin = getOrigin(liveReloadHost, config.LIVERELOAD_PORT);
