@@ -50,6 +50,7 @@ getXML('gapreload', function (config) {
     if (!serverOrigin) { return; }
     var contentPath = /\/www\/.+$/.exec(location)[0];
     // Use `replace` so that it doesn't break the Android back button.
+    alert(cordova.platformId);
     location.replace(serverOrigin + cordova.platformId + contentPath);
   }
   var liveReloadHost = config.LIVERELOAD_HOST || config.SERVER_HOST;
