@@ -55,7 +55,7 @@ getXML('gapreload', function (config) {
       location.replace(serverOrigin + cordova.platformId + contentPath);
     } else {
       
-      location.replace(serverOrigin + cordova.platformId + '/assets' + contentPath);
+      location.replace(serverOrigin + 'ios' + contentPath);
     }
   }
   var liveReloadHost = config.LIVERELOAD_HOST || config.SERVER_HOST;
